@@ -31,3 +31,8 @@
             })
         ]
     }
+
+    - after chnage your package.json file :
+      "scripts": {
+          "start": "webpack"
+          },
