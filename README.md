@@ -34,5 +34,7 @@
 
     - after chnage your package.json file :
       "scripts": {
-          "start": "webpack"
+          "start": "webpack serve"
           },
+    - npm start
+    -  
