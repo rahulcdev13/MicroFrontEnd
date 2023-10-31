@@ -9,4 +9,25 @@
   - write some code like console.log("MFE1")
   - Create public folder and inside create new index.html file 
   - write some code like html5 create body part and take one div with id
-  - create webpack.config.js below code 
+  - create webpack.config.js below code
+
+    const HtmlWebpackPlugin = require("html-webpack-plugin")
+    const ModuleFederationPlugin = require("webpack/lib/container/ModuleFederationPlugin");
+    module.exports = {
+        mode:"development",
+        devServer : {
+            port:3002
+        },
+        plugins:[
+            new HtmlWebpackPlugin({
+                template:"./public/index.html"
+            }),
+            new ModuleFederationPlugin({
+                name:"cart",
+                filename:"remoteEntry.js",
+                exposes:{
+                    "./CartIndex":"./src/index.js"
+                }
+            })
+        ]
+    }
